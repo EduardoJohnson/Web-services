@@ -3,9 +3,8 @@ package com.example.project.domain;
 import java.io.Serializable;
 
 
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+
 public class Post implements Serializable {
 
 	private static final long serialVersionUID = 1L;

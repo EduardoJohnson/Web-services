@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class UpdateUserRequestDto {
 	
 	private Long cpf;
-	private String fistName;
+	private String firstName;
 	private String email;
 
 	public UpdateUserRequestDto(){
@@ -20,7 +20,7 @@ public class UpdateUserRequestDto {
 		@JsonProperty(value = "name", required = true)	String name,
 		@JsonProperty(value = "email", required = true)	String email) {
 		this.cpf = cpf;
-		this.fistName = name;
+		this.firstName = name;
 		this.email = email;
 	}
 
@@ -30,8 +30,8 @@ public class UpdateUserRequestDto {
 	}
 
 
-	public String getFistName() {
-		return fistName;
+	public String getFirstName() {
+		return firstName;
 	}
 
 

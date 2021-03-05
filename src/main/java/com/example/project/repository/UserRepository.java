@@ -1,12 +1,13 @@
 package com.example.project.repository;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 
 
 import com.example.project.domain.User;
+import org.springframework.stereotype.Repository;
 
-@RepositoryRestResource(collectionResourceRel = "user", path = "user")
-public interface UserRepository extends MongoRepository<User, String>{
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
 	
 }
