@@ -2,21 +2,18 @@ package com.example.project.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import org.springframework.data.mongodb.core.mapping.Document;
+import javax.persistence.*;
 
 
-@Document(collection = "user")
+@Entity
+@Table(schema = "public",name = "user")
 public class User implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
 	private Long cpf;
 	private String name;
 	private String email;
@@ -26,7 +23,7 @@ public class User implements Serializable{
 	}
 
 
-	public User(String id, Long cpf, String name, String email) {
+	public User(Long id, Long cpf, String name, String email) {
 		super();
 		this.id = id;
 		this.cpf = cpf;
@@ -35,11 +32,11 @@ public class User implements Serializable{
 	}
 	
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDto {
 	
-	private String id;
+	private Long id;
 	private Long cpf;
 	private String name;
 	private String email;
@@ -18,7 +18,7 @@ public class UserDto {
 	}
 
 
-	public UserDto(String id,Long cpf ,String name, String email) {
+	public UserDto(Long id,Long cpf ,String name, String email) {
 		this.id = id;
 		this.cpf= cpf;
 		this.name = name;
@@ -29,7 +29,7 @@ public class UserDto {
 	}
 
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -44,7 +44,7 @@ public class UserDto {
 	}
 
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 

@@ -13,10 +13,10 @@ import com.example.project.repository.UserRepository;
 @Service
 public class UserService {
 	
-	
 
 
-	@Autowired
+
+
 	private UserRepository repo;
 
 	public UserService(UserRepository userRepository){
@@ -33,10 +33,10 @@ public class UserService {
 		return repo.findAll();
 	}
 	
-	public User update(String id ,UpdateUserRequestDto user){
+	public User update(Long id ,UpdateUserRequestDto user){
 		
 		Long cpf = user.getCpf();
-		String name = user.getFistName();
+		String name = user.getFirstName();
 		String email = user.getEmail();
 		
 		User recuperar = repo.findById(id).get();
@@ -49,13 +49,13 @@ public class UserService {
 	
 
 
-	public User filterId(String id) {
+	public User filterId(Long id) {
 	
 	    return repo.findById(id).get();
 	}
 
 	
-	public void delete(String id) {
+	public void delete(Long id) {
 		 repo.deleteById(id);
 	}
 	
