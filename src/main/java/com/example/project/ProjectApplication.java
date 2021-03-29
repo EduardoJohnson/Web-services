@@ -1,13 +1,16 @@
 package com.example.project;
 
-import com.example.project.repository.UserRepository;
+
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
 
 
-@EnableMongoRepositories(basePackageClasses = UserRepository.class)
+
 @SpringBootApplication
+@ComponentScan({"com.delivery.request"})
 
 public class ProjectApplication {
 

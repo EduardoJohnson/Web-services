@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.project.domain.User;
-import com.example.project.dto.UserDto;
+
 import com.example.project.dto.UpdateUserRequestDto;
 import com.example.project.service.UserService;
 
@@ -32,8 +32,7 @@ public class UserResource {
 	@PostMapping("/person")
 	public String save(@RequestBody User user) {
 		return service.save(user);
-		 
-		
+
 
 	
 	}

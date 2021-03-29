@@ -2,6 +2,7 @@ package com.example.project.service;
 
 import java.util.List;
 
+import com.example.project.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,13 +15,15 @@ import com.example.project.repository.UserRepository;
 public class UserService {
 	
 	
-
-
 	@Autowired
 	private UserRepository repo;
+	@Autowired
+	private UserMapper userMapper;
 
-	public UserService(UserRepository userRepository){
+	public UserService(UserRepository userRepository,UserMapper userMapper){
 		this.repo = userRepository;
+		this.userMapper = userMapper;
+
 	}
 
 	public String save(User user){
@@ -36,7 +39,7 @@ public class UserService {
 	public User update(String id ,UpdateUserRequestDto user){
 		
 		Long cpf = user.getCpf();
-		String name = user.getFistName();
+		String name = user.getName();
 		String email = user.getEmail();
 		
 		User recuperar = repo.findById(id).get();

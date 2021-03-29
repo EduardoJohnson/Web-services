@@ -2,10 +2,10 @@ package com.example.project.dto;
 
 
 import com.example.project.domain.User;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+
+
 public class UserDto {
 	
 	private String id;

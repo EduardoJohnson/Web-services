@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 public class UserMapper {
 
 
+
+
     private MapperFacade facade;
     private MapperFactory factory;
 
@@ -22,7 +24,7 @@ public class UserMapper {
 
         factory = new DefaultMapperFactory.Builder().build();
         factory.classMap(User.class, UpdateUserRequestDto.class)
-                .field("name", "firstName")
+                .field("name", "name")
                 .byDefault()
                 .register();
         facade = factory.getMapperFacade();
